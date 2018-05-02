@@ -14,6 +14,13 @@ module.exports = {
       // done this way because js is async
       callback(result);
     });
+  },
+  create: function(table, column, value, callback) {
+    const query = 'INSERT INTO ?? SET ?? = ?';
+    connection.query(query, [[table], [column], [value]], function(err, result) {
+      if (err) throw err.stack;
+      callback(result);
+    });
   }
   // insertOne: function() {},
   // updateOne: function() {}
