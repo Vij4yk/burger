@@ -1,7 +1,7 @@
 {
   "name": "express-friend-finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full stack app built with Express, Node, MySQL, and Handlebars",
   "main": "./app/server.js",
   "scripts": {
     "start": "node ./app/server.js"
