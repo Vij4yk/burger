@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
     const hbsObject = {
       burger: data
     };
-    console.log(hbsObject);
     res.render('index', hbsObject);
   });
 });
@@ -17,8 +16,21 @@ router.get('/', function(req, res) {
 // posts a new burger to the db
 router.post('/api/burgers', function(req, res) {
   burger.create('burger_name', req.body.name, function(result) {
-    console.log('result: ', result);
     res.json({ id: result.insertId });
+  });
+});
+
+// updates an existing burger, and selects that burger to display the update
+router.put('/api/burgers/:id', function(req, res) {
+  const id = req.body.id;
+  const devoured = req.body.devoured;
+  burger.update(id, devoured, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
 });
 

@@ -4,7 +4,7 @@
     {{#each burger}}
       <div>
         <p class="d-inline">{{id}}. {{burger_name}}</p>
-        <button>Devour it</button>
+        <button class="update-btn" data-id="{{id}}" data-burger_name="{{burger_name}}" data-devoured="{{devoured}}">Devour it</button>
       </div>
     {{/each}}
   </div>

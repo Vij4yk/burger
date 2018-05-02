@@ -21,7 +21,13 @@ module.exports = {
       if (err) throw err.stack;
       callback(result);
     });
+  },
+
+  update: function(table, identifyBy, setValue, callback) {
+    const query = 'UPDATE ?? SET ? WHERE ?';
+    connection.query(query, [[table], setValue, identifyBy], function(err, result) {
+      if (err) throw err.stack;
+      callback(result);
+    });
   }
-  // insertOne: function() {},
-  // updateOne: function() {}
 };
