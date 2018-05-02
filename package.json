@@ -1,0 +1,17 @@
+{
+  "name": "express-friend-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/server.js",
+  "scripts": {
+    "start": "node ./app/server.js"
+  },
+  "author": "Trevor Johnson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}
