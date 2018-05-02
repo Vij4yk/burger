@@ -10,7 +10,13 @@ $(document).ready(function() {
 
   function makePost(value) {
     $.post('/api/burgers', value, function(data) {
-      // create div with p tag and button for new burger
+      console.log(data);
+      $('#burger-container').append(`
+        <div>
+          <p class="d-inline">${data.id}. ${value.name}</p>
+          <button>Devour it</button>
+        </div>
+      `);
     });
   }
 });

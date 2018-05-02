@@ -1,11 +1,13 @@
 <h1>Eat Da Burger</h1>
 
-  {{#each burger}}
-    <div>
-      <p class="d-inline">{{id}}. {{burger_name}}</p>
-      <button>Devour it</button>
-    </div>
-  {{/each}}
+  <div id="burger-container">
+    {{#each burger}}
+      <div>
+        <p class="d-inline">{{id}}. {{burger_name}}</p>
+        <button>Devour it</button>
+      </div>
+    {{/each}}
+  </div>
 
   <div>
     <textarea id="create-burger" cols="0" rows="1"></textarea>
