@@ -2,12 +2,28 @@
 
   <div id="burger-container">
     {{#each burger}}
+      {{#unless devoured}}
       <div>
         <p class="d-inline">{{id}}. {{burger_name}}</p>
         <button class="update-btn" data-id="{{id}}" data-burger_name="{{burger_name}}" data-devoured="{{devoured}}">Devour it</button>
       </div>
+      {{/unless}}
     {{/each}}
   </div>
+
+  <div class="devoured-container">
+    <h2>devoured</h2>
+    {{#each burger}}
+      {{#if devoured}}
+      <div>
+        <p class="d-inline">{{id}}. {{burger_name}}</p>
+        <p>devoured</p>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+
+
 
   <div>
     <textarea id="create-burger" cols="0" rows="1"></textarea>

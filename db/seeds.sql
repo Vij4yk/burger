@@ -3,7 +3,6 @@ INSERT INTO burgers (burger_name) VALUES
 ('Buffalo Burger'),
 ('Double Burger');
 
-INSERT INTO burgers SET burger_name = 'aaa';
-
 SELECT * FROM burgers;
 
+UPDATE burgers SET devoured = true WHERE id = 3;
