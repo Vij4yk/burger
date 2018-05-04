@@ -1,10 +1,14 @@
-/* p {
-  margin-bottom: 5px;
-} */
-
 #submit-btn {
   padding: 0;
   border: none;
   border: 1px solid rgb(207, 207, 207);
   resize: none;
+}
+
+.devour-btn {
+  width: 60%;
+}
+
+textarea {
+  width: 40%;
 }
