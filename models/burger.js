@@ -8,7 +8,6 @@ const burger = {
     });
   },
 
-  // The variables cols and vals are arrays.
   create: function(column, value, callback) {
     orm.create('burgers', column, value, function(res) {
       callback(res);

@@ -1,33 +1,33 @@
-<h1>Eat Da Burger</h1>
+<div class="container text-center">
+  <h1 class="mb-4">Eat Da Burger</h1>
 
-  <div id="burger-container">
-    {{#each burger}}
-      {{#unless devoured}}
-      <div>
-        <p class="d-inline">{{id}}. {{burger_name}}</p>
-        <button class="update-btn" data-id="{{id}}" data-burger_name="{{burger_name}}" data-devoured="{{devoured}}">Devour it</button>
+  <div class="row">
+    <div class="col-sm-6 text-right mb-5" id="burger-container">
+      {{#each burger}} {{#unless devoured}}
+      <div class="mb-3">
+        <div class="border rounded p-2 mr-4 d-inline"><p class="d-inline">{{id}}. {{burger_name}}</p></div> 
+        <button type="button" class="btn btn-primary update-btn" data-id="{{id}}" data-burger_name="{{burger_name}}" data-devoured="{{devoured}}">Devour it</button>
       </div>
-      {{/unless}}
-    {{/each}}
+      {{/unless}} {{/each}}
+    </div>
+
+    <div class="col-sm-6 text-left devoured-container">
+      {{#each burger}} 
+        {{#if devoured}}
+          <div>
+            <p class="d-inline">{{id}}. {{burger_name}} <small class="text-muted">devoured</small></p>
+          </div>
+        {{/if}} 
+      {{/each}}
+    </div>
+
+
   </div>
-
-  <div class="devoured-container">
-    <h2>devoured</h2>
-    {{#each burger}}
-      {{#if devoured}}
-      <div>
-        <p class="d-inline">{{id}}. {{burger_name}}</p>
-        <p>devoured</p>
-      </div>
-      {{/if}}
-    {{/each}}
-  </div>
-
-
-
   <div>
-    <textarea id="create-burger" cols="0" rows="1"></textarea>
+    <textarea name="input" class="p-3 rounded" id="submit-btn" cols="0" rows="1" placeholder="Add a burger"></textarea>
+    {{!-- <textarea id="create-burger" cols="0" rows="1"></textarea> --}}
   </div>
 
-  <button id="submit-btn" type="submit">Add burger</button>
-</form>
+  {{!-- <button id="submit-btn" type="submit">Add burger</button> --}}
+
+</div>
