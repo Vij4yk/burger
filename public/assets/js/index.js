@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // sends new burger to the db
   $('#submit-btn').keyup(function(e) {
+    // gets textarea value when enter is pressed
     if (e.keyCode === 13) {
       const name = {
         name: $('#submit-btn')
@@ -8,8 +9,8 @@ $(document).ready(function() {
           .trim()
       };
 
-      // adds and displays a new burger to the db
-      createBurger(name);
+      // adds a burger, or shows an error
+      checkLength(name);
       $(this).val('');
     }
   });
@@ -24,6 +25,7 @@ $(document).ready(function() {
     updateBurger(updateById);
   });
 
+  // used to set the burger to devoured in the db. reloads the page to re-sync all items from the db.
   function updateBurger(input) {
     // Send the PUT request.
     $.ajax('/api/burgers/' + input.id.id, { type: 'PUT', data: input }).then(function() {
@@ -43,5 +45,25 @@ $(document).ready(function() {
       </div> 
       `);
     });
+  }
+
+  // checks if the length is valid. either creates a new burger or shows an alert.
+  function checkLength(input) {
+    return input.name.length < 25 ? createBurger(input) : alert();
+  }
+
+  // used for when an invalid length is entered
+  function alert() {
+    $('.alert-danger').remove();
+    $('.submit-btn').before(
+      $(`
+      <div class="alert alert-danger alert-dismissible mx-auto fade show" role="alert">
+        Burger name is too long
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    `)
+    );
   }
 });

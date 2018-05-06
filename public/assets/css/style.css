@@ -6,9 +6,27 @@
 }
 
 .devour-btn {
-  width: 60%;
+  font-size: 13px;
+  margin: 0 auto;
 }
 
-textarea {
-  width: 40%;
+textarea,
+.alert-danger {
+  width: 100%;
+}
+
+@media (min-width: 350px) {
+  .btn {
+    width: 80%;
+  }
+}
+
+@media (min-width: 576px) {
+  p {
+    font-size: 15px;
+  }
+  textarea,
+  .alert-danger {
+    width: 50%;
+  }
 }

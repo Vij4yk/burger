@@ -5,4 +5,3 @@ INSERT INTO burgers (burger_name) VALUES
 
 SELECT * FROM burgers;
 
-UPDATE burgers SET devoured = true WHERE id = 3;

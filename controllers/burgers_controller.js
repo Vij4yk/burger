@@ -22,9 +22,7 @@ router.post('/api/burgers', function(req, res) {
 
 // updates an existing burger, and selects that burger to display the update
 router.put('/api/burgers/:id', function(req, res) {
-  const id = req.body.id;
-  const devoured = req.body.devoured;
-  burger.update(id, devoured, function(result) {
+  burger.update(req.body.id, req.body.devoured, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
