@@ -1,10 +1,10 @@
 {
-  "name": "express-friend-finder",
+  "name": "burger",
   "version": "1.0.0",
   "description": "Full stack app built with Express, Node, MySQL, and Handlebars",
-  "main": "./app/server.js",
+  "main": "./server.js",
   "scripts": {
-    "start": "node ./app/server.js"
+    "start": "node ./server.js"
   },
   "author": "Trevor Johnson",
   "license": "ISC",

@@ -1,11 +1,17 @@
 const mysql = require('mysql');
+let connection;
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '343$&bxxYM^9m',
-  database: 'burgers_db'
-});
+// connects to heroku or to a local db
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '343$&bxxYM^9m',
+    database: 'burgers_db'
+  });
+}
 
 connection.connect(function(err) {
   if (err) {
