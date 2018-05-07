@@ -55,7 +55,7 @@ $(document).ready(function() {
   // used for when an invalid length is entered
   function alert() {
     $('.alert-danger').remove();
-    $('.submit-btn').before(
+    $('#submit-btn').before(
       $(`
       <div class="alert alert-danger alert-dismissible mx-auto fade show" role="alert">
         Burger name is too long
