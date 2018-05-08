@@ -41,7 +41,8 @@ $(document).ready(function() {
       <div class="btn btn-primary devour-btn mb-3 d-block" data-id="${
         data.id
       }" data-burger_name="${value.name}" data-devoured="0">
-        <p>${data.id}. ${value.name} <span class="badge badge-light">Devour it</span></p>
+        <p>${data.id}. ${value.name}</p>
+        <span class="badge badge-light p-2">Devour it</span>
       </div> 
       `);
     });
