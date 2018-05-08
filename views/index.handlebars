@@ -2,6 +2,10 @@
   <h1 class="mb-4">Eat Da Burger</h1>
   <img class="mb-4" src="/assets/img/krabby-patty.jpg" alt="krabby patty">
 
+  <div class="mb-5">
+    <textarea name="input" class="p-3 rounded" id="submit-btn" cols="0" rows="1" placeholder="Add a burger"></textarea>
+  </div>
+
   <div class="row mb-3">
     <div class="col-sm-6 text-right mb-5" id="burger-container">
       {{#each burger}} {{#unless devoured}}
@@ -23,8 +27,5 @@
       {{/each}}
     </div>
 
-  </div>
-  <div class="mb-5">
-    <textarea name="input" class="p-3 rounded" id="submit-btn" cols="0" rows="1" placeholder="Add a burger"></textarea>
   </div>
 </div>
